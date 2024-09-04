@@ -1,4 +1,3 @@
-import { title } from "process";
 import { defineField } from "sanity";
 
 const roomTypes = [
@@ -88,12 +87,9 @@ const hotelRoom = {
       name: "specialNote",
       title: "Special Note",
       type: "text",
-      options: {
-        list: roomTypes,
-      },
       validation: (Rule) => Rule.required(),
       initialValue:
-        "Check-in time is 12:00 PM, checkout time is 11:59 AM. If you leave behind any items, please contact the receptionist",
+        "Check-in time is 12:00 PM, checkout time is 11:59 AM. If you leave behind any items, please contact the receptionist.",
     }),
     defineField({
       name: "dimension",
@@ -104,8 +100,8 @@ const hotelRoom = {
       name: "numberOfBeds",
       title: "Number Of Beds",
       type: "number",
-      initialValue: 1,
       validation: (Rule) => Rule.min(1),
+      initialValue: 1,
     }),
     defineField({
       name: "offeredAmenities",
