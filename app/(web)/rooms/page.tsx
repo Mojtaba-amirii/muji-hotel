@@ -31,7 +31,7 @@ const Rooms = () => {
 
   const filterRooms = (rooms: Room[]) => {
     return rooms.filter((room) => {
-      //Apply room type filter
+      // Room type filter
       if (
         roomTypeFilter &&
         roomTypeFilter.toLocaleLowerCase() !== "all" &&
@@ -39,7 +39,7 @@ const Rooms = () => {
       ) {
         return false;
       }
-      // Apply search query filter
+      // Search query filter
       if (
         searchQuery &&
         !room.name.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase())

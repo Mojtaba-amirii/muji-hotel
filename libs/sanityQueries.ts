@@ -24,3 +24,48 @@ price,
 slug,
 type,
 }`;
+
+export const getRoom = groq`*[_type == "hotelRoom" && slug.current == $slug] [0] {
+_id,
+coverImage,
+description,
+dimension,
+discount,
+images,
+isFeatured,
+isBooked,
+name,
+numberOfBeds,
+offeredAmenities,
+price,
+slug,
+specialNote,
+type,
+}`;
+
+export const getUserBookingsQuery = groq`*[_type == 'booking' && user._ref == $userId] {
+    _id,
+    hotelRoom -> {
+        _id,
+        name,
+        slug,
+        price
+    },
+    checkinDate,
+    checkoutDate,
+    numberOfDays,
+    adults,
+    children,
+    totalPrice,
+    discount
+}`;
+
+export const getUserDataQuery = groq`*[_type == 'user' && _id == $userId][0] {
+    _id,
+    name,
+    email,
+    isAdmin,
+    about,
+    _createdAt,
+    image,
+}`;

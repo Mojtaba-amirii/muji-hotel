@@ -57,7 +57,7 @@ const FeaturedRoom: FC<Props> = (props) => {
             </div>
           </div>
           <Link
-            href={`/rooms${featuredRoom.slug.current}`}
+            href={`/rooms/${featuredRoom.slug.current}`}
             className=" border h-fit text-center border-tertiary-dark text-tertiary-dark px-3 py-2 lg:py-5 rounded-2xl font-bold lg:text-xl"
           >
             More Details

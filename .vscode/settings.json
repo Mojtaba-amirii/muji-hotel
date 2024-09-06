@@ -1,3 +1,12 @@
 {
-  "cSpell.words": ["datetime", "groq", "NEXTAUTH"]
+  "cSpell.words": [
+    "checkin",
+    "datepicker",
+    "datetime",
+    "groq",
+    "NEXTAUTH",
+    "opent",
+    "Sterialization",
+    "userbooking"
+  ]
 }
