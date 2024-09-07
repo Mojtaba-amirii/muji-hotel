@@ -93,7 +93,7 @@ const BookRoomCta: FC<Props> = (props) => {
             htmlFor="check-out-date"
             className=" block text-sm font-medium text-gray-900 dark:text-gray-400"
           >
-            Check In Date
+            Check Out Date
           </label>
           <DatePicker
             selected={checkoutDate}
