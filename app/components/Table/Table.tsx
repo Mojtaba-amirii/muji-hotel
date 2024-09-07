@@ -43,7 +43,6 @@ const Table: FC<Props> = ({ bookingDetails, setRoomId, toggleRatingModal }) => {
               <td className=" px-6 py-4">{booking.hotelRoom.price}</td>
               <td className=" px-6 py-4">{booking.totalPrice}</td>
               <td className=" px-6 py-4">{booking.discount}</td>
-              <td className=" px-6 py-4">{booking.hotelRoom.price}</td>
               <td className=" px-6 py-4">{booking.numberOfDays}</td>
               <td className=" px-6 py-4">0</td>
               <td className=" px-6 py-4">
