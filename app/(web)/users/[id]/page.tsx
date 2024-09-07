@@ -89,8 +89,8 @@ const UserDetails = (props: { params: { id: string } }) => {
   return (
     <div className=" container mx-auto px-2 py-10 md:px-4">
       <div className=" grid md:grid-cols-12 gap-10 ">
-        <div className="hidden md:block md:col-span-4 lg:col-span-3 shadow-lg h-fit sticky top-10 bg-[#eff0f2] text-black rounded-lg px-6 py-4">
-          <div className=" md:w-[143px] w-38 h-28 md:h-[143px] mx-auto mb-5 rounded-full overflow-hidden">
+        <div className="hidden md:flex flex-col items-center justify-center md:col-span-4 lg:col-span-3 shadow-lg h-fit sticky top-10 bg-[#eff0f2] text-black rounded-lg px-6 py-4">
+          <div className=" md:w-[143px] w-fit h-fit md:h-[143px] mx-auto mb-5 rounded-full overflow-hidden">
             <Image
               src={userData.image}
               alt={`${userData.name}-image`}
@@ -100,7 +100,7 @@ const UserDetails = (props: { params: { id: string } }) => {
             />
           </div>
           <div className=" font-normal py-4 text-left">
-            <h6 className=" text-xl font-bold pb-3">About</h6>
+            <h6 className=" text-xl font-bold pb-3">About:</h6>
             <p className=" text-sm">{userData.about ?? ""}</p>
           </div>
           <div className=" font-normal text-left ">
@@ -117,32 +117,32 @@ const UserDetails = (props: { params: { id: string } }) => {
         </div>
 
         <div className=" md:col-span-8 lg:col-span-9">
-          <div className=" flex items-center ">
+          <div className=" flex md:flex-row items-center justify-center md:justify-start flex-col bg-[#eff0f2] md:bg-inherit rounded-lg py-3 md:py-0">
             <h5 className=" text-2xl font-bold mr-3  ">
               Hello, {userData.name}
             </h5>
-          </div>
-          <div className=" md:hidden w-14 h-14 rounded-full overflow-hidden">
-            <Image
-              src={userData.image}
-              alt="User Name"
-              width={56}
-              height={56}
-              className=" img scale-animation"
-            />
-          </div>
-          <p className=" block w-fit md:hidden text-sm py-2">
-            {userData.about ?? ""}
-          </p>
-          <p className=" text-xs py-2 font-medium">
-            Joined In {userData._createdAt.split("T")[0]}
-          </p>
-          <div className=" md:hidden flex items-center my-2">
-            <p className=" mr-2">Sign Out</p>
-            <FaSignOutAlt
-              className=" text-xl cursor-pointer"
-              onClick={() => signOut({ callbackUrl: "/" })}
-            />
+            <div className=" md:hidden w-14 h-14 rounded-full overflow-hidden">
+              <Image
+                src={userData.image}
+                alt="User Name"
+                width={56}
+                height={56}
+                className=" img scale-animation"
+              />
+            </div>
+            <p className=" block w-fit md:hidden text-sm py-2">
+              {userData.about ?? ""}
+            </p>
+            <p className=" text-xs py-2 font-medium">
+              Joined In {userData._createdAt.split("T")[0]}
+            </p>
+            <div className=" md:hidden flex items-center my-2">
+              <p className=" mr-2">Sign Out</p>
+              <FaSignOutAlt
+                className=" text-xl cursor-pointer"
+                onClick={() => signOut({ callbackUrl: "/" })}
+              />
+            </div>
           </div>
 
           <nav className=" sticky top-0 px-2 w-fit mx-auto md:w-full md:px-5 py-3 m-8 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 mt-7">

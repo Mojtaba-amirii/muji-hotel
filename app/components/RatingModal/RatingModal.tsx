@@ -30,7 +30,7 @@ const RatingModal: FC<Props> = (props) => {
     <div
       className={` fixed z-[61] inset-0 flex items-center justify-center ${isOpen ? " opacity-100 pointer-events-auto" : " opacity-0 pointer-events-none"}`}
     >
-      <div className=" bg-white w-96 rounded-lg shadow-lg">
+      <div className=" bg-white w-96 p-6 rounded-lg shadow-lg">
         <h2 className=" text-xl dark:text-gray-800 font-semibold mb-2">
           Rate Your Experience
         </h2>
@@ -45,7 +45,7 @@ const RatingModal: FC<Props> = (props) => {
                 key={index}
                 title="Rating"
                 onClick={() => setRatingValue(value)}
-                className={`w-6 h-6  ${ratingValue === value ? " text-yellow-500" : " text-gray-300"}`}
+                className={`w-6 h-6  ${ratingValue === value ? " text-yellow-500" : " text-gray-300 hover:text-yellow-200"}`}
               >
                 <BsStarFill />
               </button>
