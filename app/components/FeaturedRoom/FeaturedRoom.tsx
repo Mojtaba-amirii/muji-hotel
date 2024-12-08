@@ -1,4 +1,4 @@
-import { Room } from "@/models/room";
+import { Room } from "@/types/room";
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";

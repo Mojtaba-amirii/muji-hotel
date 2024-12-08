@@ -11,8 +11,10 @@ const NewsLetter = () => {
 
         <div className="flex-col justify-center w-full md:flex-row flex pt-12">
           <input
+            name="email"
             type="email"
             placeholder="Your email"
+            autoComplete="email"
             className="bg-[#026057] h-11 md:h-16 mb-2 md:mb-0 rounded-xl pl-6 md:mr-5 md:w-[452px] text-white placeholder:text-white focus:outline-none"
           />
           <button type="button" className="btn-tertiary">

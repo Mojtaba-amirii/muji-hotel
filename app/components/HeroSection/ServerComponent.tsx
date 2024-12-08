@@ -22,6 +22,7 @@ export const images = (
           alt="hero-1"
           width={300}
           height={300}
+          priority
           className="img scale-animation"
         />
       </div>

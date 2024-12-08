@@ -10,6 +10,7 @@ const Gallery = () => {
               alt="gallery"
               className="img"
               src="/images/hero-1.jpeg"
+              priority
               width={200}
               height={200}
             />
@@ -39,6 +40,7 @@ const Gallery = () => {
               alt="gallery"
               className="img"
               src="/images/hero-1.jpeg"
+              priority
               width={200}
               height={200}
             />

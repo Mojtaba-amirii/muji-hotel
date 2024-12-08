@@ -1,9 +1,9 @@
-import { CreateBookingDto, Room } from "@/models/room";
+import { CreateBookingDto, Room } from "@/types/room";
 import sanityClient from "./sanity";
 import * as queries from "./sanityQueries";
 import axios from "axios";
-import { Booking } from "@/models/booking";
-import { CreateReviewDto, Review, UpdateReviewDto } from "@/models/review";
+import { Booking } from "@/types/booking";
+import { CreateReviewDto, Review, UpdateReviewDto } from "@/types/review";
 
 export async function getFeaturedRoom() {
   const result = await sanityClient.fetch<Room>(

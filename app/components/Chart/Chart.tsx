@@ -8,7 +8,7 @@ import {
   BarElement,
 } from "chart.js";
 import { FC, memo } from "react";
-import { Booking } from "@/models/booking";
+import { Booking } from "@/types/booking";
 import { Bar } from "react-chartjs-2";
 
 ChartJS.register(Tooltip, CategoryScale, LinearScale, BarElement);

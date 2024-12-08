@@ -1,4 +1,4 @@
-import { Room } from "@/models/room";
+import { Room } from "@/types/room";
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,6 +19,7 @@ const RoomCard: FC<Props> = (props) => {
           alt={name}
           width={250}
           height={250}
+          priority
           className="img scale-animation"
         />
       </div>

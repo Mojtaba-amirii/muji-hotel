@@ -8,6 +8,7 @@
     "NEXTAUTH",
     "opent",
     "Sterialization",
-    "userbooking"
+    "userbooking",
+    "vercel"
   ]
 }

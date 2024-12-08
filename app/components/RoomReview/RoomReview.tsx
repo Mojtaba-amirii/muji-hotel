@@ -1,4 +1,4 @@
-import { Review } from "@/models/review";
+import { Review } from "@/types/review";
 import axios from "axios";
 import { FC, memo } from "react";
 import { BsStarFill } from "react-icons/bs";

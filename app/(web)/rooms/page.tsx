@@ -3,7 +3,7 @@
 import RoomCard from "@/app/components/RoomCard/RoomCard";
 import Search from "@/app/components/Search/Search";
 import { getRooms } from "@/libs/apis";
-import { Room } from "@/models/room";
+import { Room } from "@/types/room";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
@@ -14,48 +14,48 @@ const Rooms = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const searchQuery = searchParams.get("searchQuery");
-    const roomType = searchParams.get("roomType");
-    if (roomType) setRoomTypeFilter(roomType);
-    if (searchQuery) setSearchQuery(searchQuery);
+    const query = searchParams.get("searchQuery");
+    const type = searchParams.get("roomType");
+    if (type) setRoomTypeFilter(type);
+    if (query) setSearchQuery(query);
   }, [searchParams]);
 
-  async function fetchRooms() {
-    return getRooms();
-  }
+  const fetchRooms = async () => {
+    try {
+      return await getRooms();
+    } catch (error) {
+      console.error("Error fetching rooms:", error);
+      throw new Error("Error fetching rooms");
+    }
+  };
 
   const { data, error, isLoading } = useSWR("get/hotelRooms", fetchRooms);
-  if (error) throw new Error("Error fetching rooms");
-  if (typeof data === "undefined" && !isLoading)
-    throw new Error(" Error fetching rooms");
 
-  const filterRooms = (rooms: Room[]) => {
-    return rooms.filter((room) => {
-      // Room type filter
+  if (error) return <p>Error loading rooms.</p>;
+  if (isLoading) return <p>Loading rooms...</p>;
+
+  const filterRooms = (rooms: Room[]) =>
+    rooms.filter((room) => {
       if (
         roomTypeFilter &&
-        roomTypeFilter.toLocaleLowerCase() !== "all" &&
-        room.type.toLocaleLowerCase() !== roomTypeFilter.toLocaleLowerCase()
+        roomTypeFilter.toLowerCase() !== "all" &&
+        room.type.toLowerCase() !== roomTypeFilter.toLowerCase()
       ) {
         return false;
       }
-      // Search query filter
       if (
         searchQuery &&
-        !room.name.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase())
+        !room.name.toLowerCase().includes(searchQuery.toLowerCase())
       ) {
         return false;
       }
-      {
-        return true;
-      }
+      return true;
     });
-  };
 
   const filteredRooms = filterRooms(data || []);
 
   return (
-    <div className=" container mx-auto pt-10">
+    <div className="container mx-auto pt-10">
       <Search
         roomTypeFilter={roomTypeFilter}
         searchQuery={searchQuery}
@@ -63,7 +63,7 @@ const Rooms = () => {
         setSearchQuery={setSearchQuery}
       />
 
-      <div className=" flex mt-20 justify-between flex-wrap">
+      <div className="flex mt-20 justify-between flex-wrap">
         {filteredRooms.map((room) => (
           <RoomCard key={room._id} room={room} />
         ))}

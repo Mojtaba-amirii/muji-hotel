@@ -1,7 +1,7 @@
 "use client";
 
 import { getUserBookings } from "@/libs/apis";
-import { User } from "@/models/user";
+import { User } from "@/types/user";
 import axios from "axios";
 import useSWR from "swr";
 import Image from "next/image";
