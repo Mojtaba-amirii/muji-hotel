@@ -55,6 +55,7 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
               alt={`Room Photo ${currentPhotoIndex + 1}`}
               width={150}
               height={150}
+              priority
               className="img"
               onClick={openModal.bind(this, 0)}
             />
@@ -82,6 +83,7 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
                 alt={`Room Photo ${index + 2}`}
                 width={150}
                 height={150}
+                priority
                 className="img scale-animation"
               />
             </div>

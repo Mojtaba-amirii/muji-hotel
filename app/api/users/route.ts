@@ -8,7 +8,7 @@ import { authOptions } from "@/libs/auth";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
-export async function GET(req: Request, res: Response) {
+export async function GET() {
   const session = await getServerSession(authOptions);
   if (!session) {
     return new NextResponse("Authentication Required", { status: 500 });
@@ -23,11 +23,12 @@ export async function GET(req: Request, res: Response) {
       statusText: "Success fetching user data",
     });
   } catch (err) {
+    console.error("Error fetching user data", err);
     return new NextResponse("Fetching user failed", { status: 400 });
   }
 }
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   const session = await getServerSession(authOptions);
   if (!session) {
     return new NextResponse("Authentication Required", { status: 500 });

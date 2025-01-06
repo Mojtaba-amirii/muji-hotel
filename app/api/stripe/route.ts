@@ -18,7 +18,7 @@ type RequestData = {
   hotelRoomSlug: string;
 };
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   const {
     checkinDate,
     adults,
@@ -90,8 +90,8 @@ export async function POST(req: Request, res: Response) {
       status: 200,
       statusText: "Payment session created",
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Payment failed", error);
-    return new NextResponse(error, { status: 500 });
+    return new NextResponse(String(error), { status: 500 });
   }
 }

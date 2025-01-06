@@ -24,9 +24,14 @@ export async function POST(req: NextRequest) {
 
   try {
     event = stripe.webhooks.constructEvent(reqBody, sig, webhookSecret);
-  } catch (error: any) {
-    console.error(`Error constructing Stripe event: ${error.message}`);
-    return new NextResponse(`Webhook Error: ${error.message}`, { status: 500 });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(`Error constructing Stripe event: ${error.message}`);
+    } else {
+      console.error(`Error constructing Stripe event: ${String(error)}`);
+    }
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return new NextResponse(`Webhook Error: ${errorMessage}`, { status: 500 });
   }
 
   // load our event

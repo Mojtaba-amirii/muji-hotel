@@ -8,7 +8,7 @@ import Image from "next/image";
 import LoadingSpinner from "../../loading";
 import { FaSignOutAlt } from "react-icons/fa";
 import { signOut } from "next-auth/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsJournalBookmarkFill } from "react-icons/bs";
 import { GiMoneyStack } from "react-icons/gi";
 import Table from "@/app/components/Table/Table";
@@ -17,10 +17,19 @@ import RatingModal from "@/app/components/RatingModal/RatingModal";
 import BackDrop from "@/app/components/BackDrop/BackDrop";
 import toast from "react-hot-toast";
 
-const UserDetails = (props: { params: { id: string } }) => {
-  const {
-    params: { id: userId },
-  } = props;
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+const UserDetails = ({ params }: PageProps) => {
+  const [resolvedParams, setResolvedParams] = useState<{ slug: string } | null>(
+    null
+  );
+
+  useEffect(() => {
+    params.then((resolved) => setResolvedParams(resolved));
+  }, [params]);
+  const userId = resolvedParams?.slug;
 
   const [currentNav, setCurrentNav] = useState<
     "bookings" | "amount" | "ratings"
@@ -40,7 +49,7 @@ const UserDetails = (props: { params: { id: string } }) => {
     if (!roomId) toast.error("Room ID must be provided");
     setSubmittingReview(true);
     try {
-      const { data } = await axios.post("/api/users", {
+      await axios.post("/api/users", {
         roomId,
         reviewText: ratingText,
         ratingValue,
@@ -58,7 +67,10 @@ const UserDetails = (props: { params: { id: string } }) => {
     }
   };
 
-  const fetchUserBooking = async () => getUserBookings(userId);
+  const fetchUserBooking = async () => {
+    if (!userId) throw new Error("User ID is undefined");
+    return getUserBookings(userId);
+  };
   const fetchUserData = async () => {
     const { data } = await axios.get<User>("/api/users");
     return data;

@@ -1,7 +1,7 @@
 "use client";
 
 import useSWR from "swr";
-import LoadingSpinner from "../../loading";
+import LoadingSpinner from ".././loading";
 import HotelPhotoGallery from "@/app/components/HotelPhotoGallery/HotelPhotoGallery";
 import { MdOutlineCleaningServices } from "react-icons/md";
 import { LiaFireExtinguisherSolid } from "react-icons/lia";

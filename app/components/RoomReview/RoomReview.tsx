@@ -1,8 +1,8 @@
-import { Review } from "@/types/review";
 import axios from "axios";
 import { FC, memo } from "react";
-import { BsStarFill } from "react-icons/bs";
 import useSWR from "swr";
+
+import { Review } from "@/types/review";
 import Rating from "../Rating/Rating";
 
 const RoomReview: FC<{ roomId: string }> = ({ roomId }) => {
