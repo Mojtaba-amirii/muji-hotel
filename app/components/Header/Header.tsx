@@ -14,11 +14,11 @@ const Header = () => {
   const { data: session } = useSession();
 
   return (
-    <header className=" py-10 px-4 container mx-auto text-xl flex flex-wrap md:flex-nowrap items-center justify-between">
+    <header className=" p-10 container mx-auto text-xl flex flex-wrap md:flex-nowrap items-center justify-between">
       <div className=" flex items-center w-full md:w-2/3 ">
         <Link
           href="/"
-          className=" font-black text-tertiary-dark tracking-widest focus:outline-none hover:scale-105 duration-500 transition-all"
+          className=" font-black text-tertiary-dark tracking-widest focus:outline-hidden hover:scale-105 duration-500 transition-all"
         >
           MUJI HOTEL
         </Link>

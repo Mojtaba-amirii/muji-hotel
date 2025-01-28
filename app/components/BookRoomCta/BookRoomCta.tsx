@@ -102,7 +102,7 @@ const BookRoomCta: FC<Props> = (props) => {
             dateFormat="dd/MM/yyyy"
             minDate={calcMinCheckoutDate()}
             id="check-out-date"
-            className=" w-full border text-black rounded-lg border-gray-300 p-2.5 focus:ring-primary focus:border-primary disabled:bg-inherit disabled:dark:bg-inherit"
+            className=" w-full border text-black rounded-lg border-gray-300 p-2.5 focus:ring-primary focus:border-primary disabled:bg-inherit dark:disabled:bg-inherit"
           />
         </div>
       </div>

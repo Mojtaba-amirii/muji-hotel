@@ -27,7 +27,7 @@ export const images = (
         />
       </div>
       <div className=" grid grid-cols-2 gap-8 h-48">
-        <div className="rounded 2xl overflow-hidden">
+        <div className="rounded-sm 2xl overflow-hidden">
           <Image
             src="/images/hero-2.jpeg"
             alt="hero-2"
@@ -36,7 +36,7 @@ export const images = (
             className="img scale-animation"
           />
         </div>
-        <div className="rounded 2xl overflow-hidden">
+        <div className="rounded-sm 2xl overflow-hidden">
           <Image
             src="/images/hero-3.jpeg"
             alt="hero-3"

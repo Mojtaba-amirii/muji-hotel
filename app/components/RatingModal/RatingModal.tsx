@@ -28,7 +28,7 @@ const RatingModal: FC<Props> = (props) => {
 
   return (
     <div
-      className={` fixed z-[61] inset-0 flex items-center justify-center ${isOpen ? " opacity-100 pointer-events-auto" : " opacity-0 pointer-events-none"}`}
+      className={` fixed z-61 inset-0 flex items-center justify-center ${isOpen ? " opacity-100 pointer-events-auto" : " opacity-0 pointer-events-none"}`}
     >
       <div className=" bg-white w-96 p-6 rounded-lg shadow-lg">
         <h2 className=" text-xl dark:text-gray-800 font-semibold mb-2">

@@ -44,7 +44,7 @@ const Search: FC<Props> = ({
             <select
               name="room-type"
               id="roomType"
-              className="w-full px-4 capitalize rounded leading-tight dark:bg-black focus:outline-none"
+              className="w-full px-4 capitalize rounded-sm leading-tight dark:bg-black focus:outline-hidden"
               value={roomTypeFilter}
               onChange={handleRoomTypeChange}
             >
@@ -65,7 +65,7 @@ const Search: FC<Props> = ({
             type="search"
             id="search"
             title="search-input"
-            className=" w-full px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white"
+            className=" w-full px-4 py-3 rounded-sm leading-tight dark:bg-black focus:outline-hidden placeholder:text-black dark:placeholder:text-white"
             placeholder="Search..."
             value={searchQuery}
             onChange={handleSearchQueryChange}

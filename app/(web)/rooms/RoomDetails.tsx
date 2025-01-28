@@ -185,7 +185,7 @@ const RoomDetails: FC<RoomDetailsProps> = ({ params }) => {
                 </div>
               </div>
 
-              <div className=" shadow dark:shadow-white rounded-lg p-6">
+              <div className=" shadow-sm dark:shadow-white rounded-lg p-6">
                 <div className=" items-center mb-4">
                   <p className=" md:text-lg font-semibold">Customer Reviews</p>
                 </div>
@@ -196,7 +196,7 @@ const RoomDetails: FC<RoomDetailsProps> = ({ params }) => {
             </div>
           </div>
 
-          <div className="md:col-span-4 rounded-xl shadow-lg dark:shadow dark:shadow-white sticky top-10 h-fit overflow-auto">
+          <div className="md:col-span-4 rounded-xl shadow-lg dark:shadow-sm dark:shadow-white sticky top-10 h-fit overflow-auto">
             <BookRoomCta
               discount={room.discount}
               price={room.price}

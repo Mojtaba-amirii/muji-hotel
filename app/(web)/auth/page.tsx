@@ -18,7 +18,7 @@ const Auth = () => {
   const [formData, setFormData] = useState(defaultFormData);
 
   const inputStyles =
-    " border border-gray-300 sm:text-sm text-black rounded-lg w-full p-2.5 focus:outline-none";
+    " border border-gray-300 sm:text-sm text-black rounded-lg w-full p-2.5 focus:outline-hidden";
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
@@ -125,7 +125,7 @@ const Auth = () => {
           </label>
           <button
             type="submit"
-            className=" w-full bg-tertiary-dark focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            className=" w-full bg-tertiary-dark focus:outline-hidden font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             Sign Up
           </button>

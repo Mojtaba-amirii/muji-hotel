@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
 import "./globals.css";
+import type { Metadata } from "next";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import ThemeProvider from "../components/ThemeProvider/ThemeProvider";
@@ -40,7 +40,7 @@ export default function RootLayout({
           <ThemeProvider>
             <Header />
             <Toast />
-            <main className=" font-normal">{children}</main>
+            <main className="font-normal">{children}</main>
             <Footer />
           </ThemeProvider>
         </NextAuthProvider>
