@@ -71,8 +71,15 @@ export const createBooking = async ({
       }
     );
     return data;
-  } catch (err: any) {
-    console.error("Error in createBooking:", err.response?.data || err);
+  } catch (err: unknown) {
+    if (axios.isAxiosError(err)) {
+      console.error(
+        "Error in createBooking:",
+        err.response?.data || err.message
+      );
+    } else {
+      console.error("Error in createBooking:", err);
+    }
     throw err;
   }
 };

@@ -1,21 +1,22 @@
 "use client";
 
-import { getUserBookings } from "@/libs/apis";
-import { User } from "@/types/user";
 import axios from "axios";
 import useSWR from "swr";
 import Image from "next/image";
-import LoadingSpinner from "../../loading";
 import { FaSignOutAlt } from "react-icons/fa";
 import { signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { BsJournalBookmarkFill } from "react-icons/bs";
 import { GiMoneyStack } from "react-icons/gi";
+import toast from "react-hot-toast";
+
+import { User } from "@/types/user";
+import LoadingSpinner from "../../loading";
+import { getUserBookings } from "@/libs/apis";
 import Table from "@/app/components/Table/Table";
 import Chart from "@/app/components/Chart/Chart";
-import RatingModal from "@/app/components/RatingModal/RatingModal";
 import BackDrop from "@/app/components/BackDrop/BackDrop";
-import toast from "react-hot-toast";
+import RatingModal from "@/app/components/RatingModal/RatingModal";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

@@ -1,19 +1,20 @@
 "use client";
 
 import useSWR from "swr";
-import LoadingSpinner from ".././loading";
-import HotelPhotoGallery from "@/app/components/HotelPhotoGallery/HotelPhotoGallery";
 import { MdOutlineCleaningServices } from "react-icons/md";
 import { LiaFireExtinguisherSolid } from "react-icons/lia";
 import { AiOutlineMedicineBox } from "react-icons/ai";
 import { GiSmokeBomb } from "react-icons/gi";
-import { getRoom } from "@/libs/apis";
-import BookRoomCta from "@/app/components/BookRoomCta/BookRoomCta";
 import { FC, useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
+
+import { getRoom } from "@/libs/apis";
+import LoadingSpinner from ".././loading";
 import { getStripe } from "@/libs/stripe";
 import RoomReview from "@/app/components/RoomReview/RoomReview";
+import BookRoomCta from "@/app/components/BookRoomCta/BookRoomCta";
+import HotelPhotoGallery from "@/app/components/HotelPhotoGallery/HotelPhotoGallery";
 
 interface RoomDetailsProps {
   params: { slug: string };

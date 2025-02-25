@@ -1,6 +1,5 @@
 "use client";
 
-import ThemeContext from "@/context/themeContext";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,9 +7,10 @@ import { useContext } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 
+import ThemeContext from "@/context/themeContext";
+
 const Header = () => {
   const { darkTheme, setDarkTheme } = useContext(ThemeContext);
-
   const { data: session } = useSession();
 
   return (
