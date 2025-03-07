@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@sanity/vision": "^3.78.1",
-    "@stripe/stripe-js": "^5.9.2",
-    "axios": "^1.8.1",
+    "@stripe/stripe-js": "^5.10.0",
+    "axios": "^1.8.2",
     "chart.js": "^4.4.7",
     "next": "^15.2.1",
     "next-auth": "^4.24.11",
@@ -25,10 +25,10 @@
     "react-icons": "^5.4.0",
     "sanity": "^3.78.1",
     "stripe": "^17.7.0",
-    "swr": "^2.3.2"
+    "swr": "^2.3.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.11",
+    "@tailwindcss/postcss": "^4.0.12",
     "@types/event-source-polyfill": "^1.0.5",
     "@types/hast": "^3.0.4",
     "@types/node": "^22.13.9",
@@ -40,7 +40,7 @@
     "eslint": "^9.21.0",
     "eslint-config-next": "^15.2.1",
     "postcss": "^8.5.2",
-    "tailwindcss": "^4.0.11",
+    "tailwindcss": "^4.0.12",
     "typescript": "^5.8.2"
   }
 }
