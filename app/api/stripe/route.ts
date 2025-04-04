@@ -1,12 +1,12 @@
-import { getServerSession } from "next-auth";
 import Stripe from "stripe";
+import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
 import { authOptions } from "@/libs/auth";
 import { getRoom } from "@/libs/apis";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-  apiVersion: "2025-02-24.acacia",
+  apiVersion: "2025-03-31.basil",
 });
 
 type RequestData = {
