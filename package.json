@@ -11,7 +11,7 @@
   "dependencies": {
     "@sanity/vision": "^3.86.1",
     "@stripe/stripe-js": "^7.2.0",
-    "axios": "^1.8.4",
+    "axios": "^1.9.0",
     "chart.js": "^4.4.9",
     "next": "^15.3.1",
     "next-auth": "^4.24.11",
@@ -31,7 +31,7 @@
     "@tailwindcss/postcss": "^4.1.4",
     "@types/event-source-polyfill": "^1.0.5",
     "@types/hast": "^3.0.4",
-    "@types/node": "^22.14.1",
+    "@types/node": "^22.15.2",
     "@types/normalize-package-data": "^2.4.4",
     "@types/react": "^19.1.2",
     "@types/react-datepicker": "^6.2.0",
