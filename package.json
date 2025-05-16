@@ -17,7 +17,7 @@
     "next": "^15.3.2",
     "next-auth": "^4.24.11",
     "next-auth-sanity": "^1.5.3",
-    "next-sanity": "^9.11.0",
+    "next-sanity": "^9.11.1",
     "react": "^19.1.0",
     "react-chartjs-2": "^5.3.0",
     "react-datepicker": "^8.3.0",
@@ -29,7 +29,7 @@
     "swr": "^2.3.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.6",
+    "@tailwindcss/postcss": "^4.1.7",
     "@types/event-source-polyfill": "^1.0.5",
     "@types/hast": "^3.0.4",
     "@types/node": "^22.15.18",
@@ -41,7 +41,7 @@
     "eslint": "^9.26.0",
     "eslint-config-next": "^15.3.2",
     "postcss": "^8.5.2",
-    "tailwindcss": "^4.1.6",
+    "tailwindcss": "^4.1.7",
     "typescript": "^5.8.3"
   }
 }
