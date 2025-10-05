@@ -6,7 +6,7 @@ import { authOptions } from "@/libs/auth";
 import { getRoom } from "@/libs/apis";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-  apiVersion: "2025-08-27.basil",
+  apiVersion: "2025-09-30.clover",
 });
 
 type RequestData = {

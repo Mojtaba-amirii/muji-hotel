@@ -11,7 +11,6 @@ import axios from "axios";
 
 import { getRoom } from "@/libs/apis";
 import LoadingSpinner from ".././loading";
-import { getStripe } from "@/libs/stripe";
 import RoomReview from "@/app/components/RoomReview/RoomReview";
 import BookRoomCta from "@/app/components/BookRoomCta/BookRoomCta";
 import HotelPhotoGallery from "@/app/components/HotelPhotoGallery/HotelPhotoGallery";
@@ -65,7 +64,6 @@ const RoomDetails: FC<RoomDetailsProps> = ({ params }) => {
 
     const numberOfDays = calcNumDays();
     const hotelRoomSlug = room.slug.current;
-    const stripe = await getStripe();
 
     try {
       const { data: stripeSession } = await axios.post("/api/stripe", {
@@ -77,13 +75,10 @@ const RoomDetails: FC<RoomDetailsProps> = ({ params }) => {
         hotelRoomSlug,
       });
 
-      if (stripe) {
-        const result = await stripe.redirectToCheckout({
-          sessionId: stripeSession.id,
-        });
-        if (result.error) {
-          toast.error("Payment failed: ");
-        }
+      if (stripeSession.url) {
+        window.location.href = stripeSession.url;
+      } else {
+        toast.error("Unable to redirect to checkout - no URL provided");
       }
     } catch (err) {
       console.error("Payment failed", err);
