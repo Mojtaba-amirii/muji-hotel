@@ -2,11 +2,13 @@
   "name": "muji-hotel",
   "version": "0.1.0",
   "private": true,
+  "//": "Note: 13 low-severity vulnerabilities exist in min-document (Sanity transitive dependency). Already on latest Sanity v4.10.2. Low risk - awaiting upstream fix.",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "audit:check": "npm audit --audit-level=moderate"
   },
   "dependencies": {
     "@sanity/client": "^7.12.0",
@@ -34,7 +36,7 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/event-source-polyfill": "^1.0.5",
     "@types/hast": "^3.0.4",
-    "@types/node": "^24.6.2",
+    "@types/node": "^24.7.0",
     "@types/normalize-package-data": "^2.4.4",
     "@types/react": "^19.2.0",
     "@types/react-datepicker": "^6.2.0",
