@@ -2,13 +2,19 @@
   "name": "muji-hotel",
   "version": "0.1.0",
   "private": true,
-  "//": "Note: 13 low-severity vulnerabilities exist in min-document (Sanity transitive dependency). Already on latest Sanity v4.10.2. Low risk - awaiting upstream fix.",
+  "//": "SECURITY NOTE: 13 low-severity vulnerabilities exist in min-document (Sanity transitive dependency).",
+  "//2": "Vulnerability: Prototype pollution in min-document <=2.19.0 (all versions affected).",
+  "//3": "Status: Using latest Sanity v4.10.2 and next-sanity v11.4.2. Awaiting upstream fix.",
+  "//4": "Risk: LOW - min-document is not directly exposed in production; used internally by Sanity Studio.",
+  "//5": "Action: Monitor https://github.com/advisories/GHSA-rx8g-88g5-qh64 for updates.",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "audit:check": "npm audit --audit-level=moderate"
+    "audit:check": "npm audit --audit-level=moderate",
+    "audit:full": "npm audit",
+    "audit:summary": "npm audit --json | node -e \"const data = JSON.parse(require('fs').readFileSync(0, 'utf-8')); console.log(`Total: ${data.metadata.vulnerabilities.total} | Info: ${data.metadata.vulnerabilities.info} | Low: ${data.metadata.vulnerabilities.low} | Moderate: ${data.metadata.vulnerabilities.moderate} | High: ${data.metadata.vulnerabilities.high} | Critical: ${data.metadata.vulnerabilities.critical}`);\""
   },
   "dependencies": {
     "@sanity/client": "^7.12.0",
@@ -38,9 +44,9 @@
     "@types/hast": "^3.0.4",
     "@types/node": "^24.7.0",
     "@types/normalize-package-data": "^2.4.4",
-    "@types/react": "^19.2.0",
+    "@types/react": "^19.2.2",
     "@types/react-datepicker": "^6.2.0",
-    "@types/react-dom": "^19.2.0",
+    "@types/react-dom": "^19.2.1",
     "@types/unist": "^3.0.3",
     "eslint": "^9.37.0",
     "eslint-config-next": "^15.5.4",

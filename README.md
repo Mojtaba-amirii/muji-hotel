@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Muji Hotel
+
+A modern hotel booking platform built with Next.js, Sanity CMS, and Stripe for payments.
 
 ## Getting Started
 
@@ -19,6 +21,25 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Security
+
+This project maintains security best practices with regular dependency audits.
+
+### Running Security Audits
+
+```bash
+# Quick summary of vulnerabilities by severity
+npm run audit:summary
+
+# Full audit report
+npm run audit:full
+
+# Check for moderate+ severity issues (recommended for CI/CD)
+npm run audit:check
+```
+
+**Current Status:** ✅ No moderate, high, or critical vulnerabilities
 
 ## Learn More
 
