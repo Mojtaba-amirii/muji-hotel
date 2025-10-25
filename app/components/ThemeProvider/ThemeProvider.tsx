@@ -4,17 +4,26 @@ import React, { useState, useEffect } from "react";
 import ThemeContext from "@/context/themeContext";
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const themeFromStorage: boolean =
-    typeof localStorage !== "undefined" && localStorage.getItem("hotel-theme")
-      ? JSON.parse(localStorage.getItem("hotel-theme")!)
-      : false;
-
-  const [darkTheme, setDarkTheme] = useState<boolean>(themeFromStorage);
+  const [darkTheme, setDarkTheme] = useState<boolean>(false);
   const [renderComponent, setRenderComponent] = useState<boolean>(false);
 
   useEffect(() => {
+    // Load theme from localStorage only on client side
+    const themeFromStorage =
+      typeof window !== "undefined" && localStorage.getItem("hotel-theme")
+        ? JSON.parse(localStorage.getItem("hotel-theme")!)
+        : false;
+
+    setDarkTheme(themeFromStorage);
     setRenderComponent(true);
   }, []);
+
+  useEffect(() => {
+    // Save theme to localStorage whenever it changes
+    if (typeof window !== "undefined") {
+      localStorage.setItem("hotel-theme", JSON.stringify(darkTheme));
+    }
+  }, [darkTheme]);
 
   if (!renderComponent) return <></>;
 
