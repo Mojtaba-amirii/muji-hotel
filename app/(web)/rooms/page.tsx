@@ -5,20 +5,19 @@ import Search from "@/app/components/Search/Search";
 import { getRooms } from "@/libs/apis";
 import { Room } from "@/types/room";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useSWR from "swr";
 
 const Rooms = () => {
-  const [roomTypeFilter, setRoomTypeFilter] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
   const searchParams = useSearchParams();
 
-  useEffect(() => {
-    const query = searchParams.get("searchQuery");
-    const type = searchParams.get("roomType");
-    if (type) setRoomTypeFilter(type);
-    if (query) setSearchQuery(query);
-  }, [searchParams]);
+  // Initialize state from URL params - this runs only once on mount
+  const [roomTypeFilter, setRoomTypeFilter] = useState(
+    () => searchParams.get("roomType") || ""
+  );
+  const [searchQuery, setSearchQuery] = useState(
+    () => searchParams.get("searchQuery") || ""
+  );
 
   const fetchRooms = async () => {
     try {

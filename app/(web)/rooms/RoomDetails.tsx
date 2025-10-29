@@ -76,7 +76,7 @@ const RoomDetails: FC<RoomDetailsProps> = ({ params }) => {
       });
 
       if (stripeSession.url) {
-        window.location.href = stripeSession.url;
+        window.location.assign(stripeSession.url);
       } else {
         toast.error("Unable to redirect to checkout - no URL provided");
       }
