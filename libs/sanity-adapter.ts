@@ -1,5 +1,5 @@
-import type { Adapter, AdapterUser, AdapterAccount } from "next-auth/adapters";
 import type { SanityClient } from "next-sanity";
+import type { Adapter, AdapterUser, AdapterAccount } from "next-auth/adapters";
 
 export function SanityAdapter(client: SanityClient): Adapter {
   return {

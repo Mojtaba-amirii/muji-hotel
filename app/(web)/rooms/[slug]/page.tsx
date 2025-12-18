@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense, useEffect, useState } from "react";
+
 import RoomDetails from "../RoomDetails";
 import LoadingSpinner from "../../loading";
 

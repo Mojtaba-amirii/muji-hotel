@@ -1,13 +1,13 @@
 "use client";
 
 import useSWR from "swr";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { FC, useState } from "react";
+import { GiSmokeBomb } from "react-icons/gi";
+import { AiOutlineMedicineBox } from "react-icons/ai";
 import { MdOutlineCleaningServices } from "react-icons/md";
 import { LiaFireExtinguisherSolid } from "react-icons/lia";
-import { AiOutlineMedicineBox } from "react-icons/ai";
-import { GiSmokeBomb } from "react-icons/gi";
-import { FC, useState } from "react";
-import toast from "react-hot-toast";
-import axios from "axios";
 
 import { getRoom } from "@/libs/apis";
 import LoadingSpinner from ".././loading";

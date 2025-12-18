@@ -1,14 +1,14 @@
 "use client";
 
-import axios from "axios";
 import useSWR from "swr";
+import axios from "axios";
 import Image from "next/image";
-import { FaSignOutAlt } from "react-icons/fa";
+import toast from "react-hot-toast";
 import { signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
-import { BsJournalBookmarkFill } from "react-icons/bs";
 import { GiMoneyStack } from "react-icons/gi";
-import toast from "react-hot-toast";
+import { FaSignOutAlt } from "react-icons/fa";
+import { BsJournalBookmarkFill } from "react-icons/bs";
 
 import { User } from "@/types/user";
 import LoadingSpinner from "../../loading";
@@ -103,7 +103,7 @@ const UserDetails = ({ params }: PageProps) => {
     <div className=" container mx-auto px-2 py-10 md:px-4">
       <div className=" grid md:grid-cols-12 gap-10 ">
         <div className="hidden md:flex flex-col items-center justify-center md:col-span-4 lg:col-span-3 shadow-lg h-fit sticky top-10 bg-[#eff0f2] text-black rounded-lg px-6 py-4">
-          <div className=" md:w-[143px] w-fit h-fit md:h-[143px] mx-auto mb-5 rounded-full overflow-hidden">
+          <div className=" md:w-35.75 w-fit h-fit md:h-35.75 mx-auto mb-5 rounded-full overflow-hidden">
             <Image
               src={userData.image}
               alt={`${userData.name}-image`}

@@ -1,12 +1,12 @@
 "use client";
 
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { AiFillGithub } from "react-icons/ai";
+import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
+import { useRouter } from "next/navigation";
+import { AiFillGithub } from "react-icons/ai";
 import { signUp } from "@/libs/sanity-client";
 import { signIn, useSession } from "next-auth/react";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 const defaultFormData = {
   name: "",

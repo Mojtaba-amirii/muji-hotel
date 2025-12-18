@@ -1,9 +1,9 @@
 "use client";
 
-import { FC, useState } from "react";
 import Image from "next/image";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FC, useState } from "react";
 import { MdCancel } from "react-icons/md";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 import { Image as ImageType } from "@/types/room";
 
@@ -38,7 +38,7 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
   return (
     <div className=" container mx-auto">
       <div className=" grid md:grid-cols-2 relative gap-5 px-3">
-        <div className=" h-[540px] relative rounded-2xl overflow-hidden">
+        <div className=" h-135 relative rounded-2xl overflow-hidden">
           <div className=" hidden md:flex justify-center items-center w-full h-full">
             <Image
               src={photos[0].url}
@@ -110,7 +110,7 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
 
         {showModal && (
           <div className=" fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-55">
-            <div className=" h-[75vh] w-[320px] md:w-[700px] relative">
+            <div className=" h-[75vh] w-[320px] md:w-175 relative">
               <Image
                 src={photos[currentPhotoIndex].url}
                 alt={`Room Photo ${currentPhotoIndex + 1}`}

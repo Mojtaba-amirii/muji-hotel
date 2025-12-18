@@ -1,9 +1,9 @@
+import useSWR from "swr";
 import axios from "axios";
 import { FC, memo } from "react";
-import useSWR from "swr";
 
-import { Review } from "@/types/review";
 import Rating from "../Rating/Rating";
+import { Review } from "@/types/review";
 
 const RoomReview: FC<{ roomId: string }> = ({ roomId }) => {
   const fetchRoomReviews = async () => {

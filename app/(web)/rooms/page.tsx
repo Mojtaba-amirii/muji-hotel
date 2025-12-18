@@ -1,12 +1,13 @@
 "use client";
 
-import RoomCard from "@/app/components/RoomCard/RoomCard";
-import Search from "@/app/components/Search/Search";
-import { getRooms } from "@/libs/apis";
-import { Room } from "@/types/room";
-import { useSearchParams } from "next/navigation";
-import { useState } from "react";
 import useSWR from "swr";
+import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+
+import { Room } from "@/types/room";
+import { getRooms } from "@/libs/apis";
+import Search from "@/app/components/Search/Search";
+import RoomCard from "@/app/components/RoomCard/RoomCard";
 
 const Rooms = () => {
   const searchParams = useSearchParams();

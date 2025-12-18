@@ -1,9 +1,9 @@
 "use client";
 
-import { useSession } from "next-auth/react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { useContext } from "react";
+import { useSession } from "next-auth/react";
 import { FaUserCircle } from "react-icons/fa";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 

@@ -1,8 +1,9 @@
-import { CreateBookingDto, Room } from "@/types/room";
-import sanityClient from "./sanity";
-import * as queries from "./sanityQueries";
 import axios from "axios";
+
+import sanityClient from "./sanity";
 import { Booking } from "@/types/booking";
+import * as queries from "./sanityQueries";
+import { CreateBookingDto, Room } from "@/types/room";
 import { CreateReviewDto, Review, UpdateReviewDto } from "@/types/review";
 
 export async function getFeaturedRoom() {

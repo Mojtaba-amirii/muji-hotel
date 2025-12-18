@@ -1,5 +1,5 @@
-import { Dispatch, FC, memo, SetStateAction } from "react";
 import { BsStarFill } from "react-icons/bs";
+import { Dispatch, FC, memo, SetStateAction } from "react";
 
 type Props = {
   isOpen: boolean;

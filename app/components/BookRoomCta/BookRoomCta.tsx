@@ -1,7 +1,8 @@
 "use client";
 
-import { Dispatch, FC, SetStateAction, memo } from "react";
 import DatePicker from "react-datepicker";
+import { Dispatch, FC, SetStateAction, memo } from "react";
+
 import "react-datepicker/dist/react-datepicker.css";
 
 type Props = {
