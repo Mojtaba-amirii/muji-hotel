@@ -9,6 +9,7 @@
     "opent",
     "Sterialization",
     "userbooking",
-    "vercel"
+    "vercel",
+    "webstorage"
   ]
 }
