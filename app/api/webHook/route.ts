@@ -6,7 +6,7 @@ import { createBooking, updateHotelRoom } from "@/libs/apis";
 const checkout_session_completed = "checkout.session.completed";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-  apiVersion: "2026-02-25.clover",
+  apiVersion: "2026-03-25.dahlia",
 });
 
 export async function POST(req: NextRequest) {
