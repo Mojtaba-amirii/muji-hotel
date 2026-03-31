@@ -19,7 +19,7 @@
   "dependencies": {
     "@sanity/client": "^7.20.0",
     "@sanity/vision": "^5.18.0",
-    "@stripe/stripe-js": "^9.0.0",
+    "@stripe/stripe-js": "^9.0.1",
     "axios": "^1.14.0",
     "bcryptjs": "^3.0.3",
     "chart.js": "^4.5.1",
