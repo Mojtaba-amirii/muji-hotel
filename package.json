@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@sanity/client": "^7.23.0",
-    "@sanity/vision": "^5.31.1",
+    "@sanity/vision": "^6.1.0",
     "@stripe/stripe-js": "^9.8.0",
     "axios": "^1.18.1",
     "bcryptjs": "^3.0.3",
@@ -33,7 +33,7 @@
     "react-dom": "^19.2.7",
     "react-hot-toast": "^2.6.0",
     "react-icons": "^5.6.0",
-    "sanity": "^5.31.1",
+    "sanity": "^6.1.0",
     "stripe": "^22.2.3",
     "swr": "^2.4.2"
   },
@@ -43,7 +43,7 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/event-source-polyfill": "^1.0.5",
     "@types/hast": "^3.0.4",
-    "@types/node": "^25.9.4",
+    "@types/node": "^26.0.0",
     "@types/normalize-package-data": "^2.4.4",
     "@types/react": "^19.2.17",
     "@types/react-datepicker": "^6.2.0",
@@ -59,6 +59,7 @@
   "overrides": {
     "glob": "^11.1.0",
     "undici": "^8.3.0",
+    "ws": "^8.21.0",
     "jsdom": "^27.4.0",
     "uuid": "11.1.1",
     "js-yaml": "^4.1.0",
@@ -68,5 +69,17 @@
     },
     "underscore.string": "^3.3.6",
     "postcss": ""
+  },
+  "lavamoat": {
+    "allowScripts": {
+      "eslint-config-next>eslint-import-resolver-typescript>unrs-resolver": false,
+      "next>sharp": false,
+      "sanity>@sanity/cli>tsx>esbuild": false
+    }
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true
   }
 }
