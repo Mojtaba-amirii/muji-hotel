@@ -17,25 +17,25 @@
     "audit:summary": "npm audit --json | node -e \"const data = JSON.parse(require('fs').readFileSync(0, 'utf-8')); console.log(`Total: ${data.metadata.vulnerabilities.total} | Info: ${data.metadata.vulnerabilities.info} | Low: ${data.metadata.vulnerabilities.low} | Moderate: ${data.metadata.vulnerabilities.moderate} | High: ${data.metadata.vulnerabilities.high} | Critical: ${data.metadata.vulnerabilities.critical}`);\""
   },
   "dependencies": {
-    "@sanity/client": "^7.24.0",
-    "@sanity/vision": "^6.5.0",
-    "@stripe/stripe-js": "^9.12.0",
-    "axios": "^1.18.1",
+    "@sanity/client": "^7.26.2",
+    "@sanity/vision": "^6.9.1",
+    "@stripe/stripe-js": "^9.13.0",
+    "axios": "^1.19.0",
     "bcryptjs": "^3.0.3",
     "chart.js": "^4.5.1",
     "fix": "^0.0.6",
-    "next": "^16.2.10",
+    "next": "^16.3.0",
     "next-auth": "^4.24.15",
-    "next-sanity": "^13.1.4",
-    "react": "^19.2.7",
+    "next-sanity": "^13.3.1",
+    "react": "^19.2.8",
     "react-chartjs-2": "^5.3.1",
     "react-datepicker": "^9.1.0",
-    "react-dom": "^19.2.7",
+    "react-dom": "^19.2.8",
     "react-hot-toast": "^2.6.0",
     "react-icons": "^5.7.0",
-    "sanity": "^6.5.0",
-    "stripe": "^22.3.2",
-    "swr": "^2.4.2"
+    "sanity": "^6.9.1",
+    "stripe": "^22.4.0",
+    "swr": "^2.5.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.6",
@@ -43,16 +43,16 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/event-source-polyfill": "^1.0.5",
     "@types/hast": "^3.0.5",
-    "@types/node": "^26.1.1",
+    "@types/node": "^26.2.0",
     "@types/normalize-package-data": "^2.4.4",
-    "@types/react": "^19.2.17",
+    "@types/react": "^19.2.18",
     "@types/react-datepicker": "^6.2.0",
-    "@types/react-dom": "^19.2.3",
+    "@types/react-dom": "^19.2.4",
     "@types/unist": "^3.0.3",
     "cross-env": "^10.1.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.2.10",
-    "postcss": "^8.5.21",
+    "eslint-config-next": "^16.3.0",
+    "postcss": "^8.5.26",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
   },
@@ -78,8 +78,8 @@
     }
   },
   "allowScripts": {
-    "esbuild@0.28.1": true,
     "sharp@0.34.5": true,
-    "unrs-resolver@1.12.2": true
+    "unrs-resolver@1.12.2": true,
+    "esbuild@0.28.2": true
   }
 }
