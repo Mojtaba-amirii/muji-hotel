@@ -39,7 +39,14 @@ npm run audit:full
 npm run audit:check
 ```
 
-**Current Status:** ✅ No moderate, high, or critical vulnerabilities
+The current dependency tree is checked in with patched `adm-zip` and `smol-toml`
+transitive dependencies. npm still reports high-severity advisories for the
+current compatible Sanity and Next.js ESLint dependency ranges, including
+`braces` through `chokidar` and `micromatch`. The current npm release of
+`braces` is `3.0.3`, which is also the version required by those packages, so
+there is no compatible upstream fix to apply without a breaking downgrade.
+Re-run the audit commands after dependency updates and remove this note when
+the upstream packages release compatible fixes.
 
 ## Learn More
 
