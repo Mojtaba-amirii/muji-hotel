@@ -6,7 +6,7 @@ import { authOptions } from "@/libs/auth";
 import { getRoom } from "@/libs/apis";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-  apiVersion: "2026-08-26.dahlia",
+  apiVersion: "2026-10-28.endive",
 });
 
 type RequestData = {
@@ -71,7 +71,7 @@ export async function POST(req: Request) {
           },
         },
       ],
-      payment_method_types: ["card"],
+      allowed_payment_method_types: ["card"],
       success_url: `${origin}/users/${userId}`,
       metadata: {
         adults,
